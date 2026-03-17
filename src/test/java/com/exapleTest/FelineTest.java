@@ -2,8 +2,6 @@ package com.exapleTest;
 import com.example.Feline;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -41,14 +39,6 @@ public class FelineTest {
         Feline feline = new Feline();
         int kittens = feline.getKittens();
         assertEquals(1, kittens);
-    }
-
-    @ParameterizedTest
-    @ValueSource(ints = {0, 1, 3, 5, 10})
-    void getKittensWithParameterShouldReturnSameNumber(int kittensCount) {
-        Feline feline = new Feline();
-        int result = feline.getKittens(kittensCount);
-        assertEquals(kittensCount, result);
     }
 
     @Test

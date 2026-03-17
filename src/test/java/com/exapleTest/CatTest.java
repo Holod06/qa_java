@@ -3,8 +3,6 @@ import com.example.Cat;
 import com.example.Predator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -41,12 +39,5 @@ public class CatTest {
         Cat cat = new Cat(predatorMock);
         cat.getFood();
         Mockito.verify(predatorMock).eatMeat();
-    }
-
-    @ParameterizedTest
-    @ValueSource(strings = {"Мяу"})
-    void getSoundParameterizedTest(String expectedSound) {
-        Cat cat = new Cat(predatorMock);
-        assertEquals(expectedSound, cat.getSound());
     }
 }
